@@ -17,6 +17,24 @@ class TodosController extends Controller
         return view('todos.show')->with('todo',$todo);
     }
 
+    public function create(){
+        return view('todos.create');
+    }
+
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+        $todo=new Todo();
+        $todo->title=$validatedData['title'];
+        $todo->description=$validatedData['description'];
+
+        $todo->save();
+
+        return redirect()->route('todos.index')->with('success','Todo created successfully');
+    }
+
     public function edit($id){
         $todo=Todo::findOrFail($id);
         return view('todos.edit')->with('todo',$todo);

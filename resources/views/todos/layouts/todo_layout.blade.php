@@ -11,6 +11,7 @@
 </head>
 <body>
     @include('todos.includes.success')
+    @include('todos.includes.errors')
     @yield('content')
 </body>
 </html>

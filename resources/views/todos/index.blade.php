@@ -12,6 +12,7 @@
 
               <div class="text-center pt-3 pb-2">
                 <h2 class="my-4">Todoer</h2>
+                <a href="{{route('todos.create')}}" class="btn btn-success">Create to do</a>
               </div>
 
               <table class="table text-white mb-0">
