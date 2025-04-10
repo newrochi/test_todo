@@ -12,7 +12,7 @@
 
               <div class="text-center pt-3 pb-2">
                 <h2 class="my-4">Todoer</h2>
-                <a href="{{route('todos.create')}}" class="btn btn-success">Create to do</a>
+                <a href="{{route('todos.create')}}" class="btn btn-success">Create todo</a>
               </div>
 
               <table class="table text-white mb-0">
@@ -35,7 +35,12 @@
 
                     <td class="align-middle">
                         <a href="{{route('todos.edit',['id'=>$todo->id])}}" class="btn btn-success">Edit</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
+                        <form class="pt-2" action="{{route('todos.delete',['id'=>$todo->id])}}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+
                     </td>
                   </tr>
                   @endforeach
