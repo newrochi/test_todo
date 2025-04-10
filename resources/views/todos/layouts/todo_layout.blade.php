@@ -10,6 +10,7 @@
     <title>todos index</title>
 </head>
 <body>
+    @include('todos.includes.success')
     @yield('content')
 </body>
 </html>

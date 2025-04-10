@@ -1,6 +1,7 @@
 @extends('todos.layouts.todo_layout')
 
 @section('content')
+
 <section class="vh-100 gradient-custom-2">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -32,7 +33,7 @@
                     </td>
 
                     <td class="align-middle">
-                        <a href="#" class="btn btn-success">Edit</a>
+                        <a href="{{route('todos.edit',['id'=>$todo->id])}}" class="btn btn-success">Edit</a>
                         <a href="#" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>
